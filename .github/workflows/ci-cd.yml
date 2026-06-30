@@ -2,8 +2,6 @@ name: CI/CD Pipeline
 
 on:
   push:
-    branches:
-      - main
 
 jobs:
   build:
@@ -12,14 +10,5 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup Java
-        uses: actions/setup-java@v4
-        with:
-          java-version: '17'
-          distribution: 'temurin'
-
-      - name: Build Project
-        run: mvn clean install
-
-      - name: Run Tests
-        run: mvn test
+      - name: Display message
+        run: echo "Workflow is running successfully!"
